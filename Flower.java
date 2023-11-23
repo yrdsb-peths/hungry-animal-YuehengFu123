@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Flower here.
+ * A cool yellow flower!
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @ Yueheng Fu
+ * @version 1 2023 november
  */
 public class Flower extends Actor
 {
@@ -14,6 +14,7 @@ public class Flower extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        setLocation(getX(), getY() -1);
+        
     }    
 }
