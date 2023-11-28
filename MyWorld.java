@@ -23,4 +23,12 @@ public class MyWorld extends World
         addObject(flower, 300, 0);
         
     }
+    
+    public void createFlower(){
+        Flower flower = new Flower();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(flower, x, y);
+        
+    }
 }

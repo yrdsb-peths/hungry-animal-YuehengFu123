@@ -21,5 +21,19 @@ public class Kangaroo extends Actor
         else if(Greenfoot.isKeyDown("right")){
             move(1);
         }
-    }    
+        eat();
+    }
+    /**
+     * 
+     */
+    
+    public void eat()
+    {
+        if(isTouching(Flower.class)){
+         removeTouching(Flower.class);
+         MyWorld world = (MyWorld) getWorld();
+         world.createFlower();
+        }
+        
+    }
 }
