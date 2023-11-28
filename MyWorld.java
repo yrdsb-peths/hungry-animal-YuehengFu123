@@ -20,7 +20,7 @@ public class MyWorld extends World
         Kangaroo kangaroo = new Kangaroo();
         Flower flower = new Flower();
         addObject(kangaroo, 300, 200);
-        addObject(kangaroo, 300, 200);
+        addObject(flower, 300, 0);
         
     }
 }

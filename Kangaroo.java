@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Kangaroo here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Yueheng Fu
+ * November 2023
  */
 public class Kangaroo extends Actor
 {
@@ -14,6 +14,12 @@ public class Kangaroo extends Actor
      */
     public void act() 
     {
-        move(1);
+  
+        if(Greenfoot.isKeyDown("left")){
+            move(-1);
+        }
+        else if(Greenfoot.isKeyDown("right")){
+            move(1);
+        }
     }    
 }
