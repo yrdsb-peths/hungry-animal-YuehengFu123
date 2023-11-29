@@ -17,7 +17,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 400, 1, false);
         
         // create kangaroo and Flower
         Kangaroo kangaroo = new Kangaroo();
@@ -37,7 +37,13 @@ public class MyWorld extends World
      score++;
      scoreLabel.setValue(score);
     }
-        
+    /**
+     * Game over
+     */
+    public void onGameOver() {
+        Label gameOverLabel = new Label("Game Over!", 70);
+        addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+    }
     
     public void createFlower(){
         Flower flower = new Flower();
