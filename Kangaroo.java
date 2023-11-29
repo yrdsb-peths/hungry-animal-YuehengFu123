@@ -24,7 +24,7 @@ public class Kangaroo extends Actor
         eat();
     }
     /**
-     * 
+     * Spawns a new flower every time the kangaroo eats one
      */
     
     public void eat()
@@ -33,6 +33,7 @@ public class Kangaroo extends Actor
          removeTouching(Flower.class);
          MyWorld world = (MyWorld) getWorld();
          world.createFlower();
+         world.increaseScore();
         }
         
     }
