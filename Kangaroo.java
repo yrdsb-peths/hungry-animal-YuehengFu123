@@ -8,10 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Kangaroo extends Actor
 {
-    /**
-     * Act - do whatever the Kangaroo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GreenfootSound KangarooSound = new GreenfootSound("KangarooSound.mp3");
+    
     public void act() 
     {
   
@@ -34,6 +32,7 @@ public class Kangaroo extends Actor
          MyWorld world = (MyWorld) getWorld();
          world.createFlower();
          world.increaseScore();
+         KangarooSound.play();
         }
         
     }
