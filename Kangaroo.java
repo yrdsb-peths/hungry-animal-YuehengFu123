@@ -9,7 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Kangaroo extends Actor
 {
     GreenfootSound KangarooSound = new GreenfootSound("KangarooSound.mp3");
+    GreenfootImage idle = new GreenfootImage("images/Kangaroo_idle/idle0.png");
     
+    /**
+     * Constructor that is called when a new object is created
+     */
+    public Elephant(){
+    {
+        for(int i = 0; i<idle.length;i++_)
+        {
+            idle[i] = new GreenfotImage("images/Kangaroo_idle/idle" + i + ".png");
+        }
+        setImage(idle[0];
+    }
     public void act() 
     {
   
