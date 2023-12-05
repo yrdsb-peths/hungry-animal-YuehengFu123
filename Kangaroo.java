@@ -9,29 +9,39 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Kangaroo extends Actor
 {
     GreenfootSound KangarooSound = new GreenfootSound("KangarooSound.mp3");
-    GreenfootImage idle = new GreenfootImage("images/Kangaroo_idle/idle0.png");
+    GreenfootImage[] idle = new GreenfootImage[7];
+    
+    
     
     /**
      * Constructor that is called when a new object is created
      */
-    public Elephant(){
+    public Kangaroo()
     {
-        for(int i = 0; i<idle.length;i++_)
+        for(int i = 0; i<idle.length; i++)
         {
-            idle[i] = new GreenfotImage("images/Kangaroo_idle/idle" + i + ".png");
+            idle[i] = new GreenfootImage("images/Kangaroo_idle/idle" + i + ".png");
+            idle[i].scale(100, 100);
         }
-        setImage(idle[0];
+        setImage(idle[0]);
+    }
+    int imageIndex = 0;
+    public void animateKangaroo()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
     }
     public void act() 
     {
   
         if(Greenfoot.isKeyDown("left")){
-            move(-1);
+            move(-2);
         }
         else if(Greenfoot.isKeyDown("right")){
-            move(1);
+            move(2);
         }
         eat();
+        animateKangaroo();
     }
     /**
      * Spawns a new flower every time the kangaroo eats one
@@ -39,7 +49,8 @@ public class Kangaroo extends Actor
     
     public void eat()
     {
-        if(isTouching(Flower.class)){
+        if(isTouching(Flower.class))
+        {
          removeTouching(Flower.class);
          MyWorld world = (MyWorld) getWorld();
          world.createFlower();
