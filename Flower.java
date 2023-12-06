@@ -19,5 +19,5 @@ public class Flower extends Actor
         if(getY() > world.getHeight()){
             world.onGameOver();
         }
-    }    
+    }  
 }
