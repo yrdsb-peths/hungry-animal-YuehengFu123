@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Kangaroo extends Actor
 {
     GreenfootSound KangarooSound = new GreenfootSound("KangarooSound.mp3");
-    GreenfootImage[] idle = new GreenfootImage[7];
-    
+    GreenfootImage[] idleRight = new GreenfootImage[7];
+    GreenfootImage[] idleLeft = new GreenfootImage[7];
+    String facing = "right";
     
     
     /**
@@ -18,27 +19,47 @@ public class Kangaroo extends Actor
      */
     public Kangaroo()
     {
-        for(int i = 0; i<idle.length; i++)
+        for(int i = 0; i<idleRight.length; i++)
         {
-            idle[i] = new GreenfootImage("images/Kangaroo_idle/idle" + i + ".png");
-            idle[i].scale(100, 100);
+            idleRight[i] = new GreenfootImage("images/Kangaroo_idle/idle" + i + ".png");
+            idleRight[i].scale(200, 200);
         }
-        setImage(idle[0]);
+        // initial kangaroo image
+        setImage(idleRight[0]);
+        for(int i =0; i<idleLeft.length; i++)
+        {
+            idleLeft[i] = new GreenfootImage("images/Kangaroo_idle/idle" + i +".png");
+            idleLeft[i].mirrorHorizontally();
+            idleLeft[i].scale(200, 200);
+        }
     }
     int imageIndex = 0;
+    /**
+     * Animating the kangaroo
+     */
     public void animateKangaroo()
     {
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
+        if(facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex +1 ) %idleRight.length;
+        }
+        else
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
     }
     public void act() 
     {
   
         if(Greenfoot.isKeyDown("left")){
             move(-2);
+            facing = "left";
         }
         else if(Greenfoot.isKeyDown("right")){
             move(2);
+            facing = "right";
         }
         eat();
         animateKangaroo();

@@ -21,7 +21,7 @@ public class MyWorld extends World
         
         // create kangaroo and Flower
         Kangaroo kangaroo = new Kangaroo();
-        addObject(kangaroo, 300, 200);
+        addObject(kangaroo, 300, 350);
         //Creating a score counter label
         scoreLabel = new Label(0, 60);
         addObject(scoreLabel, 30, 30);
