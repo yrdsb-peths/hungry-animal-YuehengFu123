@@ -8,11 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Kangaroo extends Actor
 {
+    
     GreenfootSound KangarooSound = new GreenfootSound("KangarooSound.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[7];
     GreenfootImage[] idleLeft = new GreenfootImage[7];
     String facing = "right";
-    
+    SimpleTimer animationTimer = new SimpleTimer();
     
     /**
      * Constructor that is called when a new object is created
@@ -24,14 +25,17 @@ public class Kangaroo extends Actor
             idleRight[i] = new GreenfootImage("images/Kangaroo_idle/idle" + i + ".png");
             idleRight[i].scale(200, 200);
         }
-        // initial kangaroo image
-        setImage(idleRight[0]);
+        
         for(int i =0; i<idleLeft.length; i++)
         {
             idleLeft[i] = new GreenfootImage("images/Kangaroo_idle/idle" + i +".png");
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(200, 200);
         }
+        animationTimer.mark();
+        // initial kangaroo image
+        setImage(idleRight[0]);
+        
     }
     int imageIndex = 0;
     /**
@@ -39,6 +43,11 @@ public class Kangaroo extends Actor
      */
     public void animateKangaroo()
     {
+        if(animationTimer.millisElapsed() < 50)
+        {
+            return;
+        }
+        animationTimer.mark();
         if(facing.equals("right"))
         {
             setImage(idleRight[imageIndex]);
@@ -52,7 +61,6 @@ public class Kangaroo extends Actor
     }
     public void act() 
     {
-  
         if(Greenfoot.isKeyDown("left")){
             move(-2);
             facing = "left";
