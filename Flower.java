@@ -21,8 +21,12 @@ public class Flower extends Actor
         MyWorld world = (MyWorld) getWorld();
         if(getY() > world.getHeight()){
             world.onGameOver();
+       
         }
     }  
+    /**
+     * Changing the speed of the flower
+     */
     public void setSpeed(int spd)
     {
         speed = spd;

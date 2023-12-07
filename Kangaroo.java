@@ -65,6 +65,9 @@ public class Kangaroo extends Actor
             imageIndex = (imageIndex + 1) % idleLeft.length;
         }
     }
+    /**
+     * main act method for kangaroo
+     */
     public void act() 
     {
         if(Greenfoot.isKeyDown("k"))

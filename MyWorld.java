@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    
     public int score = 0;
     Label scoreLabel;
     int level = 1;
@@ -50,7 +51,9 @@ public class MyWorld extends World
         Label gameOverLabel = new Label("Game Over!", 70);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
     }
-    
+    /**
+     * method to randomly generate a flower
+     */
     public void createFlower(){
         Flower flower = new Flower();
         flower.setSpeed(level);
