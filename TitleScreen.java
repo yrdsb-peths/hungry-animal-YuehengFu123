@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Title Screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yueheng Fu 
+ * @version December 2023
  */
 public class TitleScreen extends World
 {
@@ -45,7 +45,7 @@ public class TitleScreen extends World
         addObject(label,248,252);
         label.setLocation(296,262);
 
-        Label label2 = new Label("Use \u2190 and \u2192 to Move", 30);
+        Label label2 = new Label("Use \u2190 and \u2192 to Move, and k to boost ( has cooldown )", 25);
         addObject(label2,296,197);
         label2.setLocation(296,300);
     }

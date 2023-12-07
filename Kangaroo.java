@@ -9,11 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Kangaroo extends Actor
 {
     
-    GreenfootSound KangarooSound = new GreenfootSound("KangarooSound.mp3");
+    GreenfootSound kangarooSound = new GreenfootSound("KangarooSound.mp3");
+    GreenfootSound boostSound = new GreenfootSound("boostSound.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[7];
     GreenfootImage[] idleLeft = new GreenfootImage[7];
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
+    SimpleTimer boostTimer = new SimpleTimer();
+    SimpleTimer boostCooldown = new SimpleTimer();
+    // Kangaroo's speed
+    public int k = 2;
     
     /**
      * Constructor that is called when a new object is created
@@ -33,6 +38,7 @@ public class Kangaroo extends Actor
             idleLeft[i].scale(200, 200);
         }
         animationTimer.mark();
+        
         // initial kangaroo image
         setImage(idleRight[0]);
         
@@ -61,16 +67,29 @@ public class Kangaroo extends Actor
     }
     public void act() 
     {
+        if(Greenfoot.isKeyDown("k"))
+        {
+          if(boostCooldown.millisElapsed() > 8000){
+            k = 8;
+            boostSound.play();
+            boostTimer.mark();
+            boostCooldown.mark();
+          }
+          
+        }
         if(Greenfoot.isKeyDown("left")){
-            move(-2);
+            move(-k);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("right")){
-            move(2);
+            move(k);
             facing = "right";
         }
         eat();
         animateKangaroo();
+        if(boostTimer.millisElapsed() > 5000){
+            k = 2;  
+        }
     }
     /**
      * Spawns a new flower every time the kangaroo eats one
@@ -84,8 +103,11 @@ public class Kangaroo extends Actor
          MyWorld world = (MyWorld) getWorld();
          world.createFlower();
          world.increaseScore();
-         KangarooSound.play();
+         kangarooSound.play();
         }
         
     }
-}
+   
+
+    }
+
