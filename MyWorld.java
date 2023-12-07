@@ -53,6 +53,7 @@ public class MyWorld extends World
     
     public void createFlower(){
         Flower flower = new Flower();
+        flower.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(flower, x, y);
