@@ -70,15 +70,25 @@ public class Kangaroo extends Actor
      */
     public void act() 
     {
+        MyWorld world = (MyWorld) getWorld();
         if(Greenfoot.isKeyDown("k"))
         {
           if(boostCooldown.millisElapsed() > 8000){
             k = 8;
+            
+            world.changeBackground();
             boostSound.play();
             boostTimer.mark();
             boostCooldown.mark();
           }
           
+        }
+        if(getX() > world.getWidth()){
+            setLocation(600, 350);
+       
+        }
+        if(getX() < 0){
+            setLocation(0,350);
         }
         if(Greenfoot.isKeyDown("left")){
             move(-k);
@@ -92,6 +102,7 @@ public class Kangaroo extends Actor
         animateKangaroo();
         if(boostTimer.millisElapsed() > 5000){
             k = 2;  
+            world.resetBackground();
         }
     }
     /**

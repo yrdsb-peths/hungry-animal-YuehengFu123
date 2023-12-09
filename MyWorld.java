@@ -39,7 +39,7 @@ public class MyWorld extends World
      score++;
      scoreLabel.setValue(score);
      
-     if(score %5 == 0)
+     if(score %15 == 0)
      {
          level +=1;
      }
@@ -61,5 +61,11 @@ public class MyWorld extends World
         int y = 0;
         addObject(flower, x, y);
         
+    }
+    public void changeBackground(){
+        setBackground("background3.png");
+    }
+    public void resetBackground(){
+        setBackground("background2.jpg");
     }
 }
