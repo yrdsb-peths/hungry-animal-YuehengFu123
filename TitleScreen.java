@@ -48,5 +48,10 @@ public class TitleScreen extends World
         Label label2 = new Label("Use \u2190 and \u2192 to Move, and k to boost ( has cooldown )", 25);
         addObject(label2,296,197);
         label2.setLocation(296,300);
+        // Play background track
+        GreenfootSound song = new GreenfootSound("song.mp3");
+        song.play();
+        song.setVolume(50);
+        
     }
 }

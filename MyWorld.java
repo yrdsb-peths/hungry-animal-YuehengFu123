@@ -12,6 +12,8 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    ;
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -29,6 +31,8 @@ public class MyWorld extends World
         addObject(scoreLabel, 30, 30);
         
         createFlower();
+        
+        
         
     }
     /**
@@ -50,11 +54,14 @@ public class MyWorld extends World
     public void onGameOver() {
         Label gameOverLabel = new Label("Game Over!", 70);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        
+        
     }
     /**
      * method to randomly generate a flower
      */
-    public void createFlower(){
+    public void createFlower()
+    {
         Flower flower = new Flower();
         flower.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
@@ -62,10 +69,12 @@ public class MyWorld extends World
         addObject(flower, x, y);
         
     }
-    public void changeBackground(){
+    public void changeBackground()
+    {
         setBackground("background3.png");
     }
-    public void resetBackground(){
+    public void resetBackground()
+    {
         setBackground("background2.jpg");
     }
 }

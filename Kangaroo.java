@@ -17,7 +17,7 @@ public class Kangaroo extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     SimpleTimer boostTimer = new SimpleTimer();
     SimpleTimer boostCooldown = new SimpleTimer();
-    // Kangaroo's speed
+// Kangaroo's speed
     public int k = 2;
     
     /**
@@ -121,6 +121,7 @@ public class Kangaroo extends Actor
         }
         
     }
+    
    
 
     }
