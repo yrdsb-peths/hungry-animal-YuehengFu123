@@ -1,1 +1,1 @@
-Added a powerup mechanic that can be activated by clicking k, whhich plays a sound and makes you faster. It cannot be repeatedly activated and has a cooldown time.
+Added a powerup mechanic that can be activated by clicking k, which plays a sound and makes you faster. It cannot be repeatedly activated and has a cooldown time. You will have to wait ~ 12 of the first apples until you can activate the first boost.
