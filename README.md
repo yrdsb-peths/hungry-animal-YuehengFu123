@@ -1,14 +1,1 @@
-# Hungry Animal Tutorial
-This is the README.md file.
-Change this file to show your intended audience what you want them to see.
-
-You can use **Markdown** syntax to format this file to do things like **bold** or *italicize* text.
-[Markdown basics](https://www.markdownguide.org/getting-started/)
-
-This particular repository is the starting template for the Hungry Elephant tutorial.
-
-[Part 1: Greenfoot Basics](https://youtu.be/zxaa3X0MihI)
-
-[Part 2: Game Enhancements](https://youtu.be/TwID9i0Ey6o)
-
-[Part 3: Final Touches](https://youtu.be/GT-eFwa4Abc)
+Added a powerup mechanic that can be activated by clicking k, which plays a sound and makes you faster. It cannot be repeatedly activated and has a cooldown time. You will have to wait ~ 12 of the first apples until you can activate the first boost.
